@@ -129,7 +129,7 @@ else
         echo $DRIVE
     fi
     DRIVEMODEL=$(cat /sys/block/$DRIVE/device/model | sed 's/ *$//g')
-    DRIVESIZE=$(($(cat /sys/block/$DRIVE/size)*512/1024/1024/1024))GB
+    DRIVESIZE=$(($(cat /sys/block/$DRIVE/size)))Bytes
     DRIVEPERCENT=$(df -h $TARGET | cut -d ' ' -f11 | tail -n 1)
     DRIVEUSED=$(df -h $TARGET | cut -d ' ' -f6 | tail -n 1)
 
